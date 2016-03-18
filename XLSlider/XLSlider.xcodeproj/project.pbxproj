@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDE0000A1C9C2EDD00DC7A5E /* XLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE000091C9C2EDD00DC7A5E /* XLSlider.m */; };
+		FDE0FFD31C9C2E2C00DC7A5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE0FFD21C9C2E2C00DC7A5E /* main.m */; };
+		FDE0FFD61C9C2E2C00DC7A5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE0FFD51C9C2E2C00DC7A5E /* AppDelegate.m */; };
+		FDE0FFD91C9C2E2C00DC7A5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE0FFD81C9C2E2C00DC7A5E /* ViewController.m */; };
+		FDE0FFDC1C9C2E2C00DC7A5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE0FFDA1C9C2E2C00DC7A5E /* Main.storyboard */; };
+		FDE0FFDE1C9C2E2C00DC7A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE0FFDD1C9C2E2C00DC7A5E /* Assets.xcassets */; };
+		FDE0FFE11C9C2E2C00DC7A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE0FFDF1C9C2E2C00DC7A5E /* LaunchScreen.storyboard */; };
+		FDE0FFEC1C9C2E2C00DC7A5E /* XLSliderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE0FFEB1C9C2E2C00DC7A5E /* XLSliderTests.m */; };
+		FDE0FFF71C9C2E2C00DC7A5E /* XLSliderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE0FFF61C9C2E2C00DC7A5E /* XLSliderUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDE0FFE81C9C2E2C00DC7A5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDE0FFC61C9C2E2C00DC7A5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDE0FFCD1C9C2E2C00DC7A5E;
+			remoteInfo = XLSlider;
+		};
+		FDE0FFF31C9C2E2C00DC7A5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDE0FFC61C9C2E2C00DC7A5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDE0FFCD1C9C2E2C00DC7A5E;
+			remoteInfo = XLSlider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FDE000081C9C2EDD00DC7A5E /* XLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSlider.h; sourceTree = "<group>"; };
+		FDE000091C9C2EDD00DC7A5E /* XLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSlider.m; sourceTree = "<group>"; };
+		FDE0FFCE1C9C2E2C00DC7A5E /* XLSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE0FFD21C9C2E2C00DC7A5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FDE0FFD41C9C2E2C00DC7A5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FDE0FFD51C9C2E2C00DC7A5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FDE0FFD71C9C2E2C00DC7A5E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FDE0FFD81C9C2E2C00DC7A5E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FDE0FFDB1C9C2E2C00DC7A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FDE0FFDD1C9C2E2C00DC7A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDE0FFE01C9C2E2C00DC7A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDE0FFE21C9C2E2C00DC7A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDE0FFE71C9C2E2C00DC7A5E /* XLSliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLSliderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE0FFEB1C9C2E2C00DC7A5E /* XLSliderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLSliderTests.m; sourceTree = "<group>"; };
+		FDE0FFED1C9C2E2C00DC7A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDE0FFF21C9C2E2C00DC7A5E /* XLSliderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLSliderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE0FFF61C9C2E2C00DC7A5E /* XLSliderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLSliderUITests.m; sourceTree = "<group>"; };
+		FDE0FFF81C9C2E2C00DC7A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDE0FFCB1C9C2E2C00DC7A5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDE0FFE41C9C2E2C00DC7A5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDE0FFEF1C9C2E2C00DC7A5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDE000071C9C2EB500DC7A5E /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				FDE000081C9C2EDD00DC7A5E /* XLSlider.h */,
+				FDE000091C9C2EDD00DC7A5E /* XLSlider.m */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		FDE0FFC51C9C2E2C00DC7A5E = {
+			isa = PBXGroup;
+			children = (
+				FDE0FFD01C9C2E2C00DC7A5E /* XLSlider */,
+				FDE0FFEA1C9C2E2C00DC7A5E /* XLSliderTests */,
+				FDE0FFF51C9C2E2C00DC7A5E /* XLSliderUITests */,
+				FDE0FFCF1C9C2E2C00DC7A5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDE0FFCF1C9C2E2C00DC7A5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDE0FFCE1C9C2E2C00DC7A5E /* XLSlider.app */,
+				FDE0FFE71C9C2E2C00DC7A5E /* XLSliderTests.xctest */,
+				FDE0FFF21C9C2E2C00DC7A5E /* XLSliderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDE0FFD01C9C2E2C00DC7A5E /* XLSlider */ = {
+			isa = PBXGroup;
+			children = (
+				FDE000071C9C2EB500DC7A5E /* Slider */,
+				FDE0FFD41C9C2E2C00DC7A5E /* AppDelegate.h */,
+				FDE0FFD51C9C2E2C00DC7A5E /* AppDelegate.m */,
+				FDE0FFD71C9C2E2C00DC7A5E /* ViewController.h */,
+				FDE0FFD81C9C2E2C00DC7A5E /* ViewController.m */,
+				FDE0FFDA1C9C2E2C00DC7A5E /* Main.storyboard */,
+				FDE0FFDD1C9C2E2C00DC7A5E /* Assets.xcassets */,
+				FDE0FFDF1C9C2E2C00DC7A5E /* LaunchScreen.storyboard */,
+				FDE0FFE21C9C2E2C00DC7A5E /* Info.plist */,
+				FDE0FFD11C9C2E2C00DC7A5E /* Supporting Files */,
+			);
+			path = XLSlider;
+			sourceTree = "<group>";
+		};
+		FDE0FFD11C9C2E2C00DC7A5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDE0FFD21C9C2E2C00DC7A5E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDE0FFEA1C9C2E2C00DC7A5E /* XLSliderTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDE0FFEB1C9C2E2C00DC7A5E /* XLSliderTests.m */,
+				FDE0FFED1C9C2E2C00DC7A5E /* Info.plist */,
+			);
+			path = XLSliderTests;
+			sourceTree = "<group>";
+		};
+		FDE0FFF51C9C2E2C00DC7A5E /* XLSliderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FDE0FFF61C9C2E2C00DC7A5E /* XLSliderUITests.m */,
+				FDE0FFF81C9C2E2C00DC7A5E /* Info.plist */,
+			);
+			path = XLSliderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDE0FFCD1C9C2E2C00DC7A5E /* XLSlider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDE0FFFB1C9C2E2C00DC7A5E /* Build configuration list for PBXNativeTarget "XLSlider" */;
+			buildPhases = (
+				FDE0FFCA1C9C2E2C00DC7A5E /* Sources */,
+				FDE0FFCB1C9C2E2C00DC7A5E /* Frameworks */,
+				FDE0FFCC1C9C2E2C00DC7A5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XLSlider;
+			productName = XLSlider;
+			productReference = FDE0FFCE1C9C2E2C00DC7A5E /* XLSlider.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDE0FFE61C9C2E2C00DC7A5E /* XLSliderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDE0FFFE1C9C2E2C00DC7A5E /* Build configuration list for PBXNativeTarget "XLSliderTests" */;
+			buildPhases = (
+				FDE0FFE31C9C2E2C00DC7A5E /* Sources */,
+				FDE0FFE41C9C2E2C00DC7A5E /* Frameworks */,
+				FDE0FFE51C9C2E2C00DC7A5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDE0FFE91C9C2E2C00DC7A5E /* PBXTargetDependency */,
+			);
+			name = XLSliderTests;
+			productName = XLSliderTests;
+			productReference = FDE0FFE71C9C2E2C00DC7A5E /* XLSliderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FDE0FFF11C9C2E2C00DC7A5E /* XLSliderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDE000011C9C2E2C00DC7A5E /* Build configuration list for PBXNativeTarget "XLSliderUITests" */;
+			buildPhases = (
+				FDE0FFEE1C9C2E2C00DC7A5E /* Sources */,
+				FDE0FFEF1C9C2E2C00DC7A5E /* Frameworks */,
+				FDE0FFF01C9C2E2C00DC7A5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDE0FFF41C9C2E2C00DC7A5E /* PBXTargetDependency */,
+			);
+			name = XLSliderUITests;
+			productName = XLSliderUITests;
+			productReference = FDE0FFF21C9C2E2C00DC7A5E /* XLSliderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDE0FFC61C9C2E2C00DC7A5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = GreatGate;
+				TargetAttributes = {
+					FDE0FFCD1C9C2E2C00DC7A5E = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					FDE0FFE61C9C2E2C00DC7A5E = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = FDE0FFCD1C9C2E2C00DC7A5E;
+					};
+					FDE0FFF11C9C2E2C00DC7A5E = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = FDE0FFCD1C9C2E2C00DC7A5E;
+					};
+				};
+			};
+			buildConfigurationList = FDE0FFC91C9C2E2C00DC7A5E /* Build configuration list for PBXProject "XLSlider" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDE0FFC51C9C2E2C00DC7A5E;
+			productRefGroup = FDE0FFCF1C9C2E2C00DC7A5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDE0FFCD1C9C2E2C00DC7A5E /* XLSlider */,
+				FDE0FFE61C9C2E2C00DC7A5E /* XLSliderTests */,
+				FDE0FFF11C9C2E2C00DC7A5E /* XLSliderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDE0FFCC1C9C2E2C00DC7A5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE0FFE11C9C2E2C00DC7A5E /* LaunchScreen.storyboard in Resources */,
+				FDE0FFDE1C9C2E2C00DC7A5E /* Assets.xcassets in Resources */,
+				FDE0FFDC1C9C2E2C00DC7A5E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDE0FFE51C9C2E2C00DC7A5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDE0FFF01C9C2E2C00DC7A5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDE0FFCA1C9C2E2C00DC7A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE0000A1C9C2EDD00DC7A5E /* XLSlider.m in Sources */,
+				FDE0FFD91C9C2E2C00DC7A5E /* ViewController.m in Sources */,
+				FDE0FFD61C9C2E2C00DC7A5E /* AppDelegate.m in Sources */,
+				FDE0FFD31C9C2E2C00DC7A5E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDE0FFE31C9C2E2C00DC7A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE0FFEC1C9C2E2C00DC7A5E /* XLSliderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDE0FFEE1C9C2E2C00DC7A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE0FFF71C9C2E2C00DC7A5E /* XLSliderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDE0FFE91C9C2E2C00DC7A5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDE0FFCD1C9C2E2C00DC7A5E /* XLSlider */;
+			targetProxy = FDE0FFE81C9C2E2C00DC7A5E /* PBXContainerItemProxy */;
+		};
+		FDE0FFF41C9C2E2C00DC7A5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDE0FFCD1C9C2E2C00DC7A5E /* XLSlider */;
+			targetProxy = FDE0FFF31C9C2E2C00DC7A5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FDE0FFDA1C9C2E2C00DC7A5E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDE0FFDB1C9C2E2C00DC7A5E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FDE0FFDF1C9C2E2C00DC7A5E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDE0FFE01C9C2E2C00DC7A5E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDE000001C9C2E2C00DC7A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = XLSliderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLSliderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XLSlider.app/XLSlider";
+			};
+			name = Release;
+		};
+		FDE000021C9C2E2C00DC7A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = XLSliderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLSliderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = XLSlider;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FDE000031C9C2E2C00DC7A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = XLSliderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLSliderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = XLSlider;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		FDE0FFF91C9C2E2C00DC7A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FDE0FFFA1C9C2E2C00DC7A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDE0FFFC1C9C2E2C00DC7A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = XLSlider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLSlider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FDE0FFFD1C9C2E2C00DC7A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = XLSlider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLSlider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FDE0FFFF1C9C2E2C00DC7A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = XLSliderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.greatgate.XLSliderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XLSlider.app/XLSlider";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDE000011C9C2E2C00DC7A5E /* Build configuration list for PBXNativeTarget "XLSliderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE000021C9C2E2C00DC7A5E /* Debug */,
+				FDE000031C9C2E2C00DC7A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FDE0FFC91C9C2E2C00DC7A5E /* Build configuration list for PBXProject "XLSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE0FFF91C9C2E2C00DC7A5E /* Debug */,
+				FDE0FFFA1C9C2E2C00DC7A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDE0FFFB1C9C2E2C00DC7A5E /* Build configuration list for PBXNativeTarget "XLSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE0FFFC1C9C2E2C00DC7A5E /* Debug */,
+				FDE0FFFD1C9C2E2C00DC7A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FDE0FFFE1C9C2E2C00DC7A5E /* Build configuration list for PBXNativeTarget "XLSliderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE0FFFF1C9C2E2C00DC7A5E /* Debug */,
+				FDE000001C9C2E2C00DC7A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDE0FFC61C9C2E2C00DC7A5E /* Project object */;
+}
