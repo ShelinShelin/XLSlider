@@ -10,75 +10,237 @@
 
 static CGFloat panDistance;
 
-@implementation XLSlider
-{
-    CALayer *_lineLayer;
+@interface LayerDelegate : NSObject
+
+@property (nonatomic, assign) CGFloat centerY;
+@property (nonatomic, assign) CGFloat lineWidth;
+@property (nonatomic, assign) CGFloat middleValue;
+@property (nonatomic, assign) CGFloat lineLength;
+@property (nonatomic, assign) CGFloat sliderDiameter;
+@property (nonatomic, strong) UIColor *sliderColor;
+@property (nonatomic, strong) UIColor *maxColor;
+@property (nonatomic, strong) UIColor *middleColor;
+@property (nonatomic, strong) UIColor *minColor;
+
+@end
+
+@implementation LayerDelegate
+
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
+
+    CGMutablePathRef maxPath = CGPathCreateMutable();
+    CGPathMoveToPoint(maxPath, NULL, panDistance + self.sliderDiameter, self.centerY);
+    CGPathAddLineToPoint(maxPath, nil, self.lineLength, self.centerY);
+    CGContextSetStrokeColorWithColor(ctx, self.maxColor.CGColor);
+    CGContextSetLineWidth(ctx, self.lineWidth);
+    CGContextAddPath(ctx, maxPath);
+    CGPathCloseSubpath(maxPath);
+    CGContextStrokePath(ctx);
+    CGPathRelease(maxPath);
+    
+    CGMutablePathRef middlePath = CGPathCreateMutable();
+    CGPathMoveToPoint(middlePath, NULL, 0, self.centerY);
+    CGPathAddLineToPoint(middlePath, nil, self.middleValue * self.lineLength, self.centerY);
+    CGContextSetStrokeColorWithColor(ctx, self.middleColor.CGColor);
+    CGContextSetLineWidth(ctx, self.lineWidth);
+    CGContextAddPath(ctx, middlePath);
+    CGPathCloseSubpath(middlePath);
+    CGContextStrokePath(ctx);
+    CGPathRelease(middlePath);
+    
+    CGMutablePathRef minPath = CGPathCreateMutable();
+    CGPathMoveToPoint(minPath, NULL, 0, self.centerY);
+    CGPathAddLineToPoint(minPath, nil, panDistance, self.centerY);
+    CGContextSetStrokeColorWithColor(ctx, self.minColor.CGColor);
+    CGContextSetLineWidth(ctx, self.lineWidth);
+    CGContextAddPath(ctx, minPath);
+    CGPathCloseSubpath(minPath);
+    CGContextStrokePath(ctx);
+    CGPathRelease(minPath);
+    
+    CGMutablePathRef pointPath = CGPathCreateMutable();
+    CGPathAddEllipseInRect(pointPath, nil, CGRectMake(panDistance, self.centerY - (self.sliderDiameter / 2), self.sliderDiameter, self.sliderDiameter));
+    CGContextSetFillColorWithColor(ctx, self.sliderColor.CGColor);
+    CGContextAddPath(ctx, pointPath);
+    CGPathCloseSubpath(pointPath);
+    CGContextFillPath(ctx);
+    CGPathRelease(pointPath);
 }
 
+@end
+
+@interface XLSlider () {
+    CALayer *_lineLayer;
+    LayerDelegate *_delegate;
+}
+
+@end
+
+@implementation XLSlider
+
+@synthesize sliderColor = _sliderColor;
+@synthesize lineWidth = _lineWidth;
+@synthesize minColor = _minColor;
+@synthesize middleColor = _middleColor;
+@synthesize maxColor = _maxColor;
+@synthesize sliderDiameter = _sliderDiameter;
+
 - (instancetype)initWithFrame:(CGRect)frame {
+    
     if ([super initWithFrame:frame]) {
+        
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
         [self addGestureRecognizer:pan];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
         [self addGestureRecognizer:tap];
+        [tap requireGestureRecognizerToFail:pan];
+        
+        _delegate = [[LayerDelegate alloc] init];
+        _delegate.centerY = self.frame.size.height / 2.0f;
+        _delegate.lineLength = self.frame.size.width;
+        _delegate.maxColor = self.maxColor;
+        _delegate.middleColor = self.middleColor;
+        _delegate.minColor = self.minColor;
+        _delegate.sliderDiameter = self.sliderDiameter;
+        _delegate.sliderColor = self.sliderColor;
+        _delegate.lineWidth = self.lineWidth;
         
         _lineLayer = [CALayer layer];
-        
-        _lineLayer.backgroundColor = [UIColor grayColor].CGColor;
+        _lineLayer.delegate = _delegate;
         _lineLayer.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
         [self.layer addSublayer:_lineLayer];
+        [_lineLayer setNeedsDisplay];
+        
+        [self addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:nil];
+        [self addObserver:self forKeyPath:@"middleValue" options:NSKeyValueObservingOptionNew context:nil];
     }
-    return self;
+        return self;
 }
 
-- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    
-    CGPathMoveToPoint(path, NULL, 0, 20);
-    
-    CGPathAddLineToPoint(path, nil, panDistance, 20);
-    
-    CGPathCloseSubpath(path);
-    
-    CGContextAddPath(ctx, path);
-    //设置边框颜色
-    CGContextSetRGBStrokeColor(ctx, 1, 0, 0, 1.0);
-    //设置填充颜色
-    CGContextSetRGBFillColor(ctx, 1, 0, 0, 1.0);
-    //设置线条宽度
-    CGContextSetLineWidth(ctx, 2.0f);
-    
-    CGContextAddEllipseInRect(ctx, CGRectMake(panDistance, 15, 10, 10));
-    
-    CGContextDrawPath(ctx, kCGPathFillStroke);
-    //6.释放路径
-    CGPathRelease(path);
+#pragma mark - key value observing
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if([keyPath isEqualToString:@"value"]){
+        [_lineLayer setNeedsDisplay];
+        if (self.valueChangeBlock) {
+            self.valueChangeBlock(self);
+        }
+    }
+    if ([keyPath isEqualToString:@"middleValue"]) {
+        [_lineLayer setNeedsDisplay];
+    }
 }
+
 
 #pragma mark - Gesture action
 
 - (void)panAction:(UIPanGestureRecognizer *)panGesture {
     
-    _lineLayer.delegate = self;
-    [_lineLayer setNeedsDisplay];
-
     CGFloat detalX = [panGesture translationInView:self].x;
     panDistance += detalX;
     //Limited the sliding
     panDistance = panDistance >= 0 ? panDistance : 0;
-    panDistance = panDistance <= self.frame.size.width ? panDistance : self.frame.size.width;
+    panDistance = panDistance <= (self.frame.size.width - self.sliderDiameter) ? panDistance : (self.frame.size.width - self.sliderDiameter);
     [panGesture setTranslation:CGPointZero inView:self];
+    self.value = panDistance / (self.frame.size.width - self.sliderDiameter);
+
+    if (panGesture.state ==  UIGestureRecognizerStateEnded && self.finishChangeBlock) {
+        if (self.finishChangeBlock) {
+            self.finishChangeBlock(self);
+        }
+    }
 }
 
 - (void)tapAction:(UITapGestureRecognizer *)tapGesture {
     
-    _lineLayer.delegate = self;
-    [_lineLayer setNeedsDisplay];
-    
     CGPoint location = [tapGesture locationInView:self];
     panDistance = location.x;
+    self.value =  panDistance / (self.frame.size.width - self.sliderDiameter);
+}
+
+#pragma mark - setter getter
+
+- (void)setSliderColor:(UIColor *)sliderColor {
+    _sliderColor = sliderColor;
+    _delegate.sliderColor = _sliderColor;
+}
+
+- (UIColor *)sliderColor {
+    if (!_sliderColor) {
+        return [UIColor blackColor];
+    }
+    return _sliderColor;
+}
+
+- (void)setSliderDiameter:(CGFloat)sliderDiameter {
+    _sliderDiameter = sliderDiameter;
+    _delegate.sliderDiameter = sliderDiameter;
+}
+
+- (CGFloat)sliderDiameter {
+    if (!_sliderDiameter) {
+        return 15.0f;
+    }
+    return _sliderDiameter;
+}
+
+- (void)setMinColor:(UIColor *)minColor {
+    _minColor = minColor;
+    _delegate.minColor = minColor;
+}
+
+- (UIColor *)minColor {
+    if (!_minColor) {
+        return [UIColor blackColor];
+    }
+    return _minColor;
+}
+
+- (void)setMaxColor:(UIColor *)maxColor {
+    _maxColor = maxColor;
+    _delegate.maxColor = maxColor;
+}
+
+- (UIColor *)maxColor {
+    if (!_maxColor) {
+        return [UIColor colorWithRed:0.96f green:0.96f blue:0.96f alpha:1.00f];
+    }
+    return _maxColor;
+}
+
+- (void)setMiddleColor:(UIColor *)middleColor {
+    _middleColor = middleColor;
+    _delegate.middleColor = middleColor;
+}
+
+- (UIColor *)middleColor {
+    if (!_middleColor) {
+        return  [UIColor lightGrayColor];
+    }
+    return _middleColor;
+}
+
+- (CGFloat)lineWidth {
+    if (!_lineWidth) {
+        return 2.0f;
+    }
+    return _lineWidth;
+}
+
+- (void)setLineWidth:(CGFloat)lineWidth {
+    _lineWidth = lineWidth;
+    _delegate.lineWidth = lineWidth;
+}
+
+-(void)setMiddleValue:(CGFloat)middleValue {
+    _middleValue = middleValue;
+    _delegate.middleValue = middleValue;
+}
+
+- (void)setValue:(CGFloat)value {
+    _value = value;
+    panDistance = value * (self.frame.size.width - self.sliderDiameter);
 }
 
 @end

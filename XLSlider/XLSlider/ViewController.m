@@ -10,6 +10,9 @@
 #import "XLSlider.h"
 
 @interface ViewController ()
+{
+    XLSlider *_slider;
+}
 
 @end
 
@@ -19,9 +22,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    XLSlider *slider = [[XLSlider alloc] initWithFrame:CGRectMake(0, 300, self.view.frame.size.width, 40)];
-    slider.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:slider];
+    _slider = [[XLSlider alloc] initWithFrame:CGRectMake(0, 300, self.view.frame.size.width, 40)];
+//    slider.sliderColor = [UIColor redColor];
+//    slider.middleColor = [UIColor redColor];
+//    slider.maxColor = [UIColor whiteColor];
+//    _slider.lineWidth = 3.0f;
+    _slider.sliderDiameter = 20.0f;
+    [self.view addSubview:_slider];
+    
+    _slider.valueChangeBlock = ^(XLSlider *slider) {
+        NSLog(@"valueChangeBlock --- %f", slider.value);
+    };
+    _slider.finishChangeBlock = ^(XLSlider *slider) {
+        NSLog(@"finishChangeBlock -- %f", slider.value);
+    };
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    _slider.middleValue += 0.1;
 }
 
 - (void)didReceiveMemoryWarning {
