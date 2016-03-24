@@ -162,6 +162,9 @@ static CGFloat panDistance;
     CGPoint location = [tapGesture locationInView:self];
     panDistance = location.x;
     self.value =  panDistance / (self.frame.size.width - self.sliderDiameter);
+    if (self.finishChangeBlock) {
+        self.finishChangeBlock(self);
+    }
 }
 
 #pragma mark - setter getter
