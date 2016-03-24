@@ -85,9 +85,9 @@ static CGFloat panDistance;
 @synthesize maxColor = _maxColor;
 @synthesize sliderDiameter = _sliderDiameter;
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)init {
     
-    if ([super initWithFrame:frame]) {
+    if ([super init]) {
         
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
         [self addGestureRecognizer:pan];
@@ -97,8 +97,7 @@ static CGFloat panDistance;
         [tap requireGestureRecognizerToFail:pan];
         
         _delegate = [[LayerDelegate alloc] init];
-        _delegate.centerY = self.frame.size.height / 2.0f;
-        _delegate.lineLength = self.frame.size.width;
+        
         _delegate.maxColor = self.maxColor;
         _delegate.middleColor = self.middleColor;
         _delegate.minColor = self.minColor;
@@ -108,7 +107,6 @@ static CGFloat panDistance;
         
         _lineLayer = [CALayer layer];
         _lineLayer.delegate = _delegate;
-        _lineLayer.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
         [self.layer addSublayer:_lineLayer];
         [_lineLayer setNeedsDisplay];
         
@@ -116,6 +114,13 @@ static CGFloat panDistance;
         [self addObserver:self forKeyPath:@"middleValue" options:NSKeyValueObservingOptionNew context:nil];
     }
         return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    _delegate.centerY = self.frame.size.height / 2.0f;
+    _delegate.lineLength = self.frame.size.width;
+    _lineLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 }
 
 #pragma mark - key value observing
@@ -241,6 +246,11 @@ static CGFloat panDistance;
 - (void)setValue:(CGFloat)value {
     _value = value;
     panDistance = value * (self.frame.size.width - self.sliderDiameter);
+}
+
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"value"];
+    [self removeObserver:self forKeyPath:@"middleValue"];
 }
 
 @end

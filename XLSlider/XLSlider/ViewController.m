@@ -22,7 +22,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _slider = [[XLSlider alloc] initWithFrame:CGRectMake(0, 300, self.view.frame.size.width, 40)];
+    _slider = [[XLSlider alloc] init];
+    _slider.frame = CGRectMake(0, 300, self.view.frame.size.width, 40);
 //    slider.sliderColor = [UIColor redColor];
 //    slider.middleColor = [UIColor redColor];
 //    slider.maxColor = [UIColor whiteColor];
@@ -39,7 +40,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _slider.middleValue += 0.1;
+    _slider.value += 0.01;
 }
 
 - (void)didReceiveMemoryWarning {
